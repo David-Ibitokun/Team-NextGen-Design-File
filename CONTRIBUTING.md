@@ -23,12 +23,26 @@ the two in sync when either changes.
 
 ## Source of truth
 
+### Frontend
+
 | Token group | Authoritative file |
 |---|---|
 | Colour theme, reduced motion, Leaflet CSS | `frontend/src/index.css` |
 | Hazard categories, statuses, badge styles | `frontend/src/utils/hazardConstants.js` |
 | Scroll reveal behaviour | `frontend/src/components/common/RevealOnScroll.jsx` |
 | Dark mode persistence | `frontend/src/context/ThemeContext.jsx` |
+
+### Backend
+
+| Concern | Authoritative file |
+|---|---|
+| All configuration | `backend/config/settings.py` |
+| URL routing and API root | `backend/config/urls.py` |
+| Permission classes | `backend/apps/accounts/permissions.py`, `backend/apps/moderation/views.py` |
+| Hazard lifecycle and enums | `backend/apps/hazards/models.py` |
+| User roles, settings, audit log | `backend/apps/accounts/models.py` |
+| Moderation actions | `backend/apps/moderation/models.py` |
+| Request/response shapes | `backend/apps/*/serializers.py` |
 
 Specifications here are derived from these files. **When the code changes, update this
 repository in the same commit.**
@@ -90,13 +104,31 @@ Significant design changes should be noted in the relevant document's changelog:
 
 ## Known inconsistencies to resolve
 
-Tracked in the documents where they occur:
+Tracked in the documents where they occur.
+
+### Frontend
 
 | Issue | Location |
 |---|---|
 | Admin badge uses `purple-*` in the header chip but `indigo-*` in navigation | [`06-patterns/badge-pattern.md`](06-patterns/badge-pattern.md) |
-| Hazard freshness appears as both `freshness` and `freshness_info` | [`10-backend-placeholder/README.md`](10-backend-placeholder/README.md) |
-| List responses may be paginated or a bare array | [`10-backend-placeholder/README.md`](10-backend-placeholder/README.md) |
+| Hazard freshness appears as both `freshness` and `freshness_info` | [`10-backend-placeholder/status-lifecycle.md`](10-backend-placeholder/status-lifecycle.md) |
+| List responses may be paginated or a bare array | [`10-backend-placeholder/api-overview.md`](10-backend-placeholder/api-overview.md) |
 | `HomePage` exists but `/` routes to `LandingPage` | [`04-screen-specs/support-screens.md`](04-screen-specs/support-screens.md) |
 | User zoom is disabled, conflicting with WCAG 1.4.4 | [`08-accessibility/README.md`](08-accessibility/README.md) |
 | Static `<meta name="theme-color">` does not follow the theme toggle | [`07-responsive/dark-mode.md`](07-responsive/dark-mode.md) |
+
+### Backend — behaviour-affecting
+
+| Issue | Impact | Location |
+|---|---|---|
+| `confirmation_threshold` hardcoded to 3 in the view | The admin setting has **no effect** on auto-confirmation | [`10-backend-placeholder/platform-settings.md`](10-backend-placeholder/platform-settings.md) |
+| `freshness_hours` hardcoded to 2 days in the model | The admin setting has **no effect** on stale marking | [`10-backend-placeholder/status-lifecycle.md`](10-backend-placeholder/status-lifecycle.md) |
+| `max_upload_size_mb` vs the `MAX_UPLOAD_SIZE_MB` env var | Two sources of truth for the same limit | [`10-backend-placeholder/media-and-uploads.md`](10-backend-placeholder/media-and-uploads.md) |
+| `allow_anonymous_map_view` not enforced | The setting cannot restrict public reads | [`10-backend-placeholder/permissions.md`](10-backend-placeholder/permissions.md) |
+| `emergency_notice_enabled` not enforced | The setting cannot change behaviour | [`10-backend-placeholder/platform-settings.md`](10-backend-placeholder/platform-settings.md) |
+| Role-change `reason` is optional server-side | The mandatory-rationale rule is UI-only | [`10-backend-placeholder/authentication.md`](10-backend-placeholder/authentication.md) |
+| `IsModeratorOrAdmin` duplicates `IsModeratorUser` | Two copies of one rule can drift | [`10-backend-placeholder/permissions.md`](10-backend-placeholder/permissions.md) |
+| `HazardFlag.status` never changes | Flags stay `pending` forever | [`10-backend-placeholder/moderation-model.md`](10-backend-placeholder/moderation-model.md) |
+| `HazardFlag` rows are never exposed to moderators | Moderators see `flags_count` but not who or why | [`10-backend-placeholder/moderation-model.md`](10-backend-placeholder/moderation-model.md) |
+| Settings audit records keys, not values | Before/after comparison is unrecoverable | [`10-backend-placeholder/moderation-model.md`](10-backend-placeholder/moderation-model.md) |
+| `image/heic` accepted client-side, unsupported server-side | iPhone users may be offered a failing format | [`10-backend-placeholder/media-and-uploads.md`](10-backend-placeholder/media-and-uploads.md) |

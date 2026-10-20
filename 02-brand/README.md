@@ -6,8 +6,8 @@ Source assets live in `frontend/public/` and are mirrored here for design refere
 
 | File | Purpose |
 |---|---|
-| [`routex-logo.svg`](assets/routex-logo.svg) | Primary mark, 48 × 48 viewBox, teal gradient pin with white road |
-| [`favicon.svg`](assets/favicon.svg) | Browser tab / apple-touch-icon, solid teal pin with white winding road |
+| [`assets/routex-logo.svg`](assets/routex-logo.svg) | Primary mark, 48 × 48 viewBox, teal gradient pin with white road |
+| [`assets/favicon.svg`](assets/favicon.svg) | Browser tab / apple-touch-icon, solid teal pin with white winding road |
 
 ## Related assets (in the application repo)
 
@@ -16,10 +16,28 @@ Source assets live in `frontend/public/` and are mirrored here for design refere
 | `frontend/public/manifest.json` | PWA manifest — icons, shortcuts, theme colours (mirrored in [`../09-pwa/`](../09-pwa/)) |
 | `frontend/public/sw.js` | Service worker — offline shell caching strategy |
 
+---
+
 ## Iconography system
 
-Icons come from **Lucide React** (`lucide-react@0.469`). They are stroke-based, inherit
-`currentColor`, and default to `1.5`–`2` stroke width.
+Icons come from **Lucide React** (`lucide-react@0.469`) — stroke-based, 24×24 grid,
+2px stroke, inheriting `currentColor`.
+
+### Complete set — [`icons/`](icons/)
+
+| | |
+|---|---|
+| **Folder** | [`icons/`](icons/) |
+| **Unique icons** | 71 |
+| **Import names in use** | 72 |
+| **Visual gallery** | [`icons/index.html`](icons/index.html) — open in a browser |
+| **Sprite sheet** | [`icons/sprite.svg`](icons/sprite.svg) — one `<symbol>` per icon |
+| **Machine index** | [`icons/manifest.json`](icons/manifest.json) |
+| **Full reference** | [`icons/README.md`](icons/README.md) |
+
+The SVGs were **extracted from the installed package**, so the geometry is authentic
+v0.469.0 artwork rather than a hand reproduction. They are named by canonical Lucide name;
+the manifest records which import name each answers to.
 
 ### Sizes in use
 
@@ -45,26 +63,28 @@ icons, trust-strip icons, and category tiles.
 
 ### Hazard category icons
 
-| Category | Icon in `CategoryBadge` | Icon in `ReportHazardForm` |
-|---|---|---|
-| Flooding | `Droplets` | `Droplets` |
-| Pothole | `CircleAlert` | `CircleDot` |
-| Blocked road | `ShieldAlert` | `AlertTriangle` |
-| Fallen tree | `Trees` | `TreePine` |
-| Other | `AlertCircle` | `HelpCircle` |
+| Category | Icon in `CategoryBadge` | Icon in `ReportHazardForm` | Icon in landing tiles |
+|---|---|---|---|
+| Flooding | `Droplets` | `Droplets` | `Droplets` |
+| Pothole | `CircleAlert` | `CircleDot` | `Cone` |
+| Blocked road | `ShieldAlert` | `TriangleAlert` | `TriangleAlert` |
+| Fallen tree | `Trees` | `TreePine` | `TreePine` |
+| Other | `CircleAlert` | `CircleHelp` | `Layers` |
 
-Landing page category preview uses `Droplets`, `Cone`, `AlertTriangle`, `TreePine`, `Layers`.
-The badge and form icons are preferred for consistency; landing icons are decorative.
+The badge and form icons are the canonical pair — the same mapping appears in both, so a
+user who learns it in the form recognises it in every badge. Landing tile icons are
+decorative (a road cone for potholes is more evocative at large size) and are not a
+teaching surface.
 
 ### Icons by function
 
 | Function | Icons |
 |---|---|
-| Navigation | `MapPin`, `Layers`, `Compass`, `Navigation` |
-| Actions | `PlusCircle`, `Camera`, `ThumbsUp`, `Flag`, `Download`, `RefreshCw`, `Save`, `ExternalLink` |
-| Auth | `LogIn`, `Eye`, `EyeOff`, `LogOut`, `User`, `UserCheck`, `UserX` |
-| Roles | `Shield`, `ShieldCheck`, `ShieldAlert`, `Sliders`, `FileText` |
-| Status | `CheckCircle2`, `Check`, `X`, `Clock`, `AlertTriangle`, `AlertCircle`, `CircleAlert` |
-| Feedback | `Info`, `Loader2`, `Sparkles`, `HelpCircle` |
+| Navigation | `MapPin`, `Map`, `List`, `Layers`, `Compass`, `Navigation`, `Menu` |
+| Actions | `CirclePlus`, `Camera`, `ThumbsUp`, `Flag`, `Download`, `RefreshCw`, `Save`, `ExternalLink` |
+| Auth | `LogIn`, `LogOut`, `Eye`, `EyeOff`, `Mail`, `KeyRound` |
+| Roles | `Shield`, `ShieldCheck`, `ShieldAlert`, `SlidersVertical`, `UserCheck`, `UserX` |
+| Status | `CircleCheck`, `CircleCheckBig`, `Check`, `X`, `CircleX`, `Clock`, `TriangleAlert`, `CircleAlert` |
+| Feedback | `Info`, `LoaderCircle`, `Sparkles`, `CircleHelp` |
 | Theme | `Sun`, `Moon` |
-| Data | `Activity`, `FileCode`, `Trash2`, `Filter`, `Search`, `Radio`, `Flame` |
+| Data | `Activity`, `FileCode`, `FileText`, `Trash2`, `Filter`, `Search`, `Radio`, `Flame`, `History` |

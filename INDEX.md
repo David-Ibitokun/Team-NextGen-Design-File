@@ -28,6 +28,7 @@ decisions **without reading application source code**.
 | Review accessibility | [`08-accessibility/README.md`](08-accessibility/README.md) |
 | Review the PWA strategy | [`09-pwa/README.md`](09-pwa/README.md) |
 | See the brand assets | [`02-brand/README.md`](02-brand/README.md) |
+| Browse the icon set | [`02-brand/icons/index.html`](02-brand/icons/index.html) — visual gallery |
 
 ---
 
@@ -37,6 +38,8 @@ decisions **without reading application source code**.
 routex-design/
 │
 ├── README.md                        ← you are here
+├── INDEX.md                         ← full documentation map
+├── CONTRIBUTING.md                  ← maintenance guidance
 │
 ├── 01-design-system/                Design tokens
 │   ├── README.md                    Overview & core decisions
@@ -49,7 +52,13 @@ routex-design/
 │   ├── README.md                    Logo, iconography, terminology
 │   ├── logo.md                      Mark construction & usage rules
 │   ├── identity-and-voice.md        Positioning, personality, voice, terminology
-│   └── assets/                      routex-logo.svg, favicon.svg
+│   ├── assets/                      routex-logo.svg, favicon.svg
+│   └── icons/                       71 Lucide SVGs + gallery + sprite + manifest
+│       ├── README.md                Full icon reference
+│       ├── index.html               Visual gallery
+│       ├── sprite.svg               One <symbol> per icon
+│       ├── manifest.json            Machine-readable index
+│       └── *.svg                    71 standalone icons
 │
 ├── 03-components/                   Component library (18 components)
 │   ├── README.md                    Index & inventory
@@ -98,9 +107,46 @@ routex-design/
 ├── 09-pwa/                          Progressive Web App
 │   └── README.md                    Manifest, service worker, install strategy
 │
-└── 10-backend-placeholder/          Backend design (pending)
-    └── README.md                    Planned contents & API context
+└── 10-backend-placeholder/          Backend & API design
+    ├── README.md                    Architecture, app structure, design decisions
+    ├── api-overview.md              URL map, versioning, pagination, CORS, config
+    ├── data-model.md                7 models, fields, constraints, ER diagram
+    ├── endpoints.md                 All 28 endpoints with request/response shapes
+    ├── authentication.md            Session + CSRF, 4 access tiers, rate limits, reset
+    ├── permissions.md               Permission classes, full role × action matrix
+    ├── status-lifecycle.md          The 5 statuses and every transition
+    ├── moderation-model.md          Flags, actions, mandatory rationale, audit log
+    ├── platform-settings.md         Operational tunables, ranges, enforcement gaps
+    ├── error-handling.md            Response formats, validation messages, silent failures
+    ├── media-and-uploads.md         Photo validation, WebP pipeline, storage layout
+    └── email-templates.md           Password reset email design & branding
 ```
+
+---
+
+## Backend at a glance
+
+| | |
+|---|---|
+| **Stack** | Django 5.1 · DRF 3.15 · drf-spectacular 0.28 · Python 3.13+ |
+| **Auth** | Session cookies with CSRF — revocable, unlike JWT |
+| **Database** | SQLite (dev) · PostgreSQL (prod) |
+| **Endpoints** | 28 routes + 3 aliases across 5 tags |
+| **Models** | 7 across 3 apps |
+| **Pagination** | 20/page on `/hazards/` only |
+| **Rate limits** | Login 10/min · Register 5/hr · Reset 10/min |
+| **Apps** | `accounts` · `hazards` · `moderation` · `common` |
+
+### Core integrity guarantees
+
+| Guarantee | Mechanism |
+|---|---|
+| One confirmation per user per report | `UniqueConstraint` (database level) |
+| One flag per user per report | Checked in the view |
+| Every moderation action has a rationale | Non-nullable model field + serializer `min_length=3` |
+| Role changes are audited | `SystemAuditLog` entry on every write |
+| Self-lockout impossible | Three independent guards |
+| Road data survives user deletion | `on_delete=SET_NULL` on reporter and moderator |
 
 ---
 
@@ -158,7 +204,7 @@ Router 6 (data router) · Axios
 
 | Included | Deferred |
 |---|---|
-| Complete design token system | Backend/API design documentation |
+| Complete design token system | Backend tests (`apps/*/tests.py`) |
 | Brand identity and logo | High-fidelity Figma source file |
 | 18 component specifications | Exported screenshot set |
 | 11 screen specifications |  |
@@ -168,11 +214,12 @@ Router 6 (data router) · Axios
 | Dark mode specification |  |
 | Accessibility requirements |  |
 | PWA & offline strategy |  |
+| **Backend API reference & data model** |  |
 
-**Note:** the specifications in this repository are derived from the implemented frontend
-source, so they document the design *as built*. Where the code contains an inconsistency, it
-is flagged inline (for example, the `purple`/`indigo` admin badge and the dual
-`freshness` field shape).
+**Note:** the specifications in this repository are derived from the implemented source, so
+they document the design and API *as built*. Where the code contains an inconsistency, it is
+flagged inline — for example, the `purple`/`indigo` admin badge, the dual `freshness` field
+shape, and the three platform settings that are admin-editable but not enforced.
 
 ---
 
@@ -183,8 +230,9 @@ is flagged inline (for example, the `purple`/`indigo` admin badge and the dual
 | Design tokens & rationale | ✅ Authoritative | Implements them |
 | Component specifications | ✅ Authoritative | Implements them |
 | Screen layouts | ✅ Authoritative | Implements them |
+| API contract & data model | ✅ Authoritative | Implements it |
 | Application logic | — | ✅ Authoritative |
-| API implementation | — | ✅ Authoritative |
+| Deployment configuration | — | ✅ Authoritative |
 
 When these disagree, the **code** is authoritative for behaviour and this repository is
 authoritative for design intent. Discrepancies should be resolved by updating both.

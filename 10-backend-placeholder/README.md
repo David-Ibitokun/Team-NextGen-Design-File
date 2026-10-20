@@ -1,136 +1,116 @@
-# Backend Design — Placeholder
+# Backend Design — README
 
-This folder is reserved for **backend and API design documentation**.
+RouteX's backend is a **Django 5.1 + Django REST Framework** JSON API enforcing the
+platform's four-tier permission model.
 
-It is intentionally empty. The frontend design system is fully documented; the backend
-documentation will be added once the Django source is available for review.
+| | |
+|---|---|
+| **Framework** | Django 5.1 · DRF 3.15 · drf-spectacular 0.28 |
+| **Language** | Python 3.13+ |
+| **Auth** | Django session cookies with CSRF protection |
+| **Database** | SQLite (development) · PostgreSQL (production) |
+| **Media** | Local filesystem, WebP conversion via Pillow |
+| **Documentation** | OpenAPI 3.0 — Swagger UI, ReDoc, raw schema |
+| **API base** | `http://127.0.0.1:8000/api/v1/` |
 
 ---
 
-## Planned contents
+## Contents
 
-| File | Covers |
+| Document | Covers |
 |---|---|
-| `api-overview.md` | REST architecture, base URLs, versioning, content negotiation |
-| `endpoints.md` | Every endpoint: method, path, purpose, access level, request and response shape |
-| `authentication.md` | Session and CSRF handling, the four account tiers, permission classes |
-| `data-model.md` | Entities, fields, types, constraints, and relationships |
-| `status-lifecycle.md` | Hazard status transitions and the rules governing them |
-| `permissions.md` | The permission matrix per role per action |
-| `moderation-model.md` | Flags, moderation actions, rationale, and audit logging |
-| `platform-settings.md` | Operational settings, ranges, defaults, and who may change them |
-| `error-handling.md` | Error response format, status codes, and rate limiting |
-| `openapi.md` | Swagger UI, ReDoc, and the raw schema endpoint |
+| [`api-overview.md`](api-overview.md) | Architecture, URL map, versioning, pagination, CORS, configuration, deployment targets |
+| [`data-model.md`](data-model.md) | All seven models, fields, constraints, indexes, relationships, ER diagram |
+| [`endpoints.md`](endpoints.md) | Every endpoint: method, path, permission, request, response, status codes |
+| [`authentication.md`](authentication.md) | Session + CSRF flow, the four access tiers, rate limits, password reset |
+| [`permissions.md`](permissions.md) | Permission classes, the full role × action matrix, role resolution |
+| [`status-lifecycle.md`](status-lifecycle.md) | The five hazard statuses, allowed transitions, auto-confirmation rules |
+| [`moderation-model.md`](moderation-model.md) | Flags, moderation actions, mandatory rationale, audit logging |
+| [`platform-settings.md`](platform-settings.md) | Operational settings, ranges, defaults, the singleton pattern |
+| [`error-handling.md`](error-handling.md) | Response formats, status codes, validation messages, upload validation |
+| [`media-and-uploads.md`](media-and-uploads.md) | Photo validation, WebP pipeline, client+server compression |
+| [`email-templates.md`](email-templates.md) | Password reset email design, branding, deliverability notes |
 
 ---
 
-## Context already established by the frontend
+## Application structure
 
-The following facts are established from frontend code and are documented in
-[`../04-screen-specs/support-screens.md`](../04-screen-specs/support-screens.md) and
-[`../05-user-flows/`](../05-user-flows/). They constrain the backend design.
+```
+backend/
+├── manage.py
+├── requirements.txt
+├── db.sqlite3
+├── config/
+│   ├── settings.py              All configuration
+│   ├── urls.py                  Root URL conf + API root + health check
+│   ├── asgi.py / wsgi.py
+├── apps/
+│   ├── common/                  Shared utilities (email backend)
+│   ├── accounts/                Users, profiles, roles, auth, password reset
+│   │   ├── models.py            UserProfile, PlatformSettings, SystemAuditLog
+│   │   ├── serializers.py
+│   │   ├── permissions.py       IsCitizen, IsModeratorUser, IsPlatformAdmin
+│   │   ├── views.py             Auth endpoints
+│   │   ├── views_admin.py       Admin endpoints
+│   │   ├── urls.py              /api/v1/auth/
+│   │   └── urls_admin.py        /api/v1/admin/
+│   ├── hazards/                 Hazard reports, confirmations, flags
+│   │   ├── models.py            HazardReport, Confirmation, HazardFlag
+│   │   ├── serializers.py
+│   │   ├── views.py             ViewSet + confirm/flag actions
+│   │   ├── validators.py        Latitude, longitude, photo
+│   │   ├── image_utils.py       WebP conversion
+│   │   ├── admin.py
+│   │   └── urls.py              /api/v1/hazards/
+│   └── moderation/              Moderation actions and history
+│       ├── models.py            ModerationAction
+│       ├── serializers.py
+│       ├── views.py
+│       └── urls.py              /api/v1/moderation/
+├── templates/emails/            password_reset.html / .txt
+└── media/hazards/YYYY/MM/       Uploaded photos
+```
 
-### Base URLs
+---
 
-| Purpose | URL |
+## Design decisions
+
+| Decision | Rationale |
 |---|---|
-| API root | `http://127.0.0.1:8000/api/v1/` |
-| Swagger UI | `http://127.0.0.1:8000/api/docs/` (also `/api/v1/docs/`) |
-| ReDoc | `http://127.0.0.1:8000/api/redoc/` |
-| Raw OpenAPI schema | `http://127.0.0.1:8000/api/schema/` |
-| Health check | `http://127.0.0.1:8000/api/v1/health/` |
-| Media (uploads) | Proxied through `/media` in dev |
+| **Session cookies, not JWT** | Sessions allow immediate server-side revocation — an admin can invalidate a compromised session. A stolen JWT cannot be withdrawn. |
+| **Server-side permissions are the boundary** | The frontend role guard is convenience only. Every endpoint enforces its own permission class, so bypassing the UI grants nothing. |
+| **Registration always yields `citizen`** | Privilege escalation must go through the audit-logged admin endpoint, never through a public path. |
+| **Mandatory moderation rationale** | Turns every editorial decision into an auditable record. This is what separates a civic tool from a censorship mechanism. |
+| **`on_delete=SET_NULL` on hazard ownership** | Deleting a user must never delete road hazard data — the dataset has public safety value independent of the reporter. |
+| **Confirmed by distinct users only** | A `UniqueConstraint` prevents one person inflating a report's confirmation count. |
+| **Stale is marked, never deleted** | Age uncertainty is expressed as amber state, not as data removal. |
+| **WebP conversion on both client and server** | Contributors on mobile data get small uploads; the server guarantees the invariant regardless of client. |
+| **`DecimalField` for coordinates** | Avoids float rounding on geospatial comparisons and bounding-box filters. |
+| **Audit log for every privileged action** | Accountability is structural, not optional. |
 
-The Vite dev server proxies `/api` and `/media` to `http://127.0.0.1:8000`, so the
-frontend uses same-origin relative paths in development.
+---
 
-### Endpoints referenced by the frontend
+## Endpoint summary
 
-| Method | Path | Frontend consumer |
+| Tag | Endpoints | Access |
 |---|---|---|
-| `POST` | `/api/v1/auth/register/` | `RegisterPage` |
-| `POST` | `/api/v1/auth/login/` | `LoginPage` |
-| `POST` | `/api/v1/auth/logout/` | `AuthContext.logout` |
-| `GET` | `/api/v1/auth/me/` | `AuthContext` session bootstrap |
-| `PATCH` | `/api/v1/auth/profile/` | Dashboard settings tab |
-| `GET` | `/api/v1/auth/dashboard-summary/` | Dashboard metric tiles |
-| `GET` | `/api/v1/hazards/` | Map, landing, dashboard lists |
-| `POST` | `/api/v1/hazards/` | `ReportHazardForm` (multipart) |
-| `POST` | `/api/v1/hazards/{id}/confirm/` | `HazardDetailsPanel` |
-| `POST` | `/api/v1/hazards/{id}/flags/` | `HazardDetailsPanel` |
-| `GET` | `/api/v1/moderation/stats/` | Moderator tiles |
-| `GET` | `/api/v1/moderation/reports/` | Moderation queue |
-| `POST` | `/api/v1/moderation/reports/{id}/action/` | Moderation action modal |
-| `GET` | `/api/v1/moderation/history/` | Decision history |
-| `GET` | `/api/v1/admin/stats/` | Admin metric tiles |
-| `GET` | `/api/v1/admin/users/` | Admin users tab |
-| `PATCH` | `/api/v1/admin/users/{id}/role/` | Admin role modal |
-| `GET`/`PATCH` | `/api/v1/admin/settings/` | Admin settings tab |
-| `GET` | `/api/v1/admin/audit-logs/` | Admin audit trail |
+| `system` | 2 | Public |
+| `auth` | 11 | Mixed |
+| `hazards` | 4 | Read public, write authenticated |
+| `moderation` | 5 (+3 aliases) | Moderator / Admin |
+| `admin` | 6 | Admin only |
 
-### Field names consumed by the frontend
+**31 endpoint routes** in total, plus 3 moderation aliases and 2 documentation aliases.
 
-`Hazard` fields referenced in components:
-
-| Field | Type | Notes |
-|---|---|---|
-| `id` | integer | |
-| `category` | enum | `flooding` · `pothole` · `blocked_road` · `fallen_tree` · `other` |
-| `status` | enum | `reported` · `under_review` · `community_confirmed` · `resolved` · `rejected` |
-| `status_display` | string | Human-readable label for badges |
-| `location_label` | string, nullable | Falls back to coordinates in the UI |
-| `description` | string, max 1000 | |
-| `latitude` / `longitude` | decimal | 6dp |
-| `photo_url` | string, nullable | |
-| `created_at` | datetime | |
-| `confirmations_count` | integer | |
-| `flags_count` | integer | |
-| `freshness` | object | `{ label, is_stale }` |
-| `freshness_info` | object | Alternate shape used in the landing live pulse |
-| `is_demo` | boolean | Triggers demo badges and banner |
-
-**Note:** `freshness` and `freshness_info` appear to be two shapes of the same concept.
-`FreshnessBadge` accepts `freshness` and `createdAt`, while the landing live pulse passes
-`freshness_info`. This is an inconsistency to resolve — a single canonical field would be
-cleaner.
-
-**Note:** responses are handled defensively as either `{ results: [...] }` (paginated) or a
-bare array, so the API should return a consistent shape — ideally always paginated.
-
-### Platform settings
-
-| Field | Range | Default | Consumed by |
-|---|---|---|---|
-| `confirmation_threshold` | 1–20 | 3 | Auto-confirmation logic |
-| `freshness_hours` | 1–168 | 24 | Stale marking |
-| `max_upload_size_mb` | 1–25 | 5 | Photo upload validation |
-
-### Rate limits observed
-
-| Action | Limit |
-|---|---|
-| Registration | 5 / hour |
-| Login | 10 / minute |
-
-### Domain rules surfaced by the UI
-
-| Rule | Where it appears in the design |
-|---|---|
-| Public registration always assigns `role="citizen"` | Register screen copy |
-| Role elevation only via `PATCH /admin/users/{id}/role/` | Admin flow |
-| One confirmation per user per hazard | Confirmation action locks after success |
-| One flag per user per report | Flag action locks after success |
-| Self-confirmation prevented | Confirmation flow |
-| Moderation rationale mandatory | Moderation action modal |
-| Self-demotion prevented | Admin role modal |
-| Self-deletion prevented | Admin users tab |
-| Every privileged action audit-logged | Admin audit trail |
-| Photo optional on reports | Report form |
+See [`endpoints.md`](endpoints.md) for the full reference.
 
 ---
 
-## Status
+## Documentation scope
 
-**Awaiting backend source.** Once the Django files are provided, this folder will be filled
-with the API reference, data model, permission matrix, and status-lifecycle documentation
-matching what the frontend already consumes.
+This documentation is derived from the implemented Django source and reflects the API
+**as built**. Inconsistencies found during review are documented rather than hidden — see
+[`api-overview.md`](api-overview.md#known-inconsistencies).
+
+**Tests** (`apps/*/tests.py`, 28 passing) were not provided and are therefore not
+documented here.

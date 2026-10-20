@@ -1,0 +1,1671 @@
+{
+  "lucideVersion": "0.469.0",
+  "uniqueIcons": 71,
+  "importNamesUsed": 72,
+  "deprecatedAliasesUsed": [
+    {
+      "canonical": "CircleAlert",
+      "usedAs": [
+        "AlertCircle"
+      ],
+      "file": "circle-alert.svg"
+    },
+    {
+      "canonical": "CircleCheck",
+      "usedAs": [
+        "CheckCircle2"
+      ],
+      "file": "circle-check.svg"
+    },
+    {
+      "canonical": "CircleCheckBig",
+      "usedAs": [
+        "CheckCircle"
+      ],
+      "file": "circle-check-big.svg"
+    },
+    {
+      "canonical": "CircleHelp",
+      "usedAs": [
+        "HelpCircle"
+      ],
+      "file": "circle-help.svg"
+    },
+    {
+      "canonical": "CirclePlus",
+      "usedAs": [
+        "PlusCircle"
+      ],
+      "file": "circle-plus.svg"
+    },
+    {
+      "canonical": "CircleX",
+      "usedAs": [
+        "XCircle"
+      ],
+      "file": "circle-x.svg"
+    },
+    {
+      "canonical": "LoaderCircle",
+      "usedAs": [
+        "Loader2"
+      ],
+      "file": "loader-circle.svg"
+    },
+    {
+      "canonical": "PenLine",
+      "usedAs": [
+        "Edit3"
+      ],
+      "file": "pen-line.svg"
+    },
+    {
+      "canonical": "SlidersVertical",
+      "usedAs": [
+        "Sliders"
+      ],
+      "file": "sliders-vertical.svg"
+    },
+    {
+      "canonical": "TriangleAlert",
+      "usedAs": [
+        "AlertTriangle"
+      ],
+      "file": "triangle-alert.svg"
+    }
+  ],
+  "icons": [
+    {
+      "canonical": "Activity",
+      "file": "activity.svg",
+      "usedAs": [
+        "Activity"
+      ],
+      "aliases": [
+        "Activity",
+        "ActivityIcon",
+        "LucideActivity"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ArrowLeft",
+      "file": "arrow-left.svg",
+      "usedAs": [
+        "ArrowLeft"
+      ],
+      "aliases": [
+        "ArrowLeft",
+        "ArrowLeftIcon",
+        "LucideArrowLeft"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/ForgotPasswordPage.jsx",
+        "pages/LoginPage.jsx",
+        "pages/ReportHazardPage.jsx",
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ArrowRight",
+      "file": "arrow-right.svg",
+      "usedAs": [
+        "ArrowRight"
+      ],
+      "aliases": [
+        "ArrowRight",
+        "ArrowRightIcon",
+        "LucideArrowRight"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Calendar",
+      "file": "calendar.svg",
+      "usedAs": [
+        "Calendar"
+      ],
+      "aliases": [
+        "Calendar",
+        "CalendarIcon",
+        "LucideCalendar"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path",
+        "rect"
+      ],
+      "usedIn": [
+        "components/hazards/HazardDetailsPanel.jsx"
+      ]
+    },
+    {
+      "canonical": "Camera",
+      "file": "camera.svg",
+      "usedAs": [
+        "Camera"
+      ],
+      "aliases": [
+        "Camera",
+        "CameraIcon",
+        "LucideCamera"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Check",
+      "file": "check.svg",
+      "usedAs": [
+        "Check"
+      ],
+      "aliases": [
+        "Check",
+        "CheckIcon",
+        "LucideCheck"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ChevronDown",
+      "file": "chevron-down.svg",
+      "usedAs": [
+        "ChevronDown"
+      ],
+      "aliases": [
+        "ChevronDown",
+        "ChevronDownIcon",
+        "LucideChevronDown"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ChevronRight",
+      "file": "chevron-right.svg",
+      "usedAs": [
+        "ChevronRight"
+      ],
+      "aliases": [
+        "ChevronRight",
+        "ChevronRightIcon",
+        "LucideChevronRight"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "CircleAlert",
+      "file": "circle-alert.svg",
+      "usedAs": [
+        "AlertCircle",
+        "CircleAlert"
+      ],
+      "aliases": [
+        "AlertCircle",
+        "AlertCircleIcon",
+        "CircleAlert",
+        "CircleAlertIcon",
+        "LucideAlertCircle",
+        "LucideCircleAlert"
+      ],
+      "deprecatedAlias": true,
+      "elements": 3,
+      "tags": [
+        "circle",
+        "line"
+      ],
+      "usedIn": [
+        "components/feedback/EmptyState.jsx",
+        "components/forms/ReportHazardForm.jsx",
+        "components/hazards/CategoryBadge.jsx",
+        "pages/ForgotPasswordPage.jsx",
+        "pages/LoginPage.jsx",
+        "pages/RegisterPage.jsx",
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "CircleCheck",
+      "file": "circle-check.svg",
+      "usedAs": [
+        "CheckCircle2"
+      ],
+      "aliases": [
+        "CheckCircle2",
+        "CheckCircle2Icon",
+        "CircleCheck",
+        "CircleCheckIcon",
+        "LucideCheckCircle2",
+        "LucideCircleCheck"
+      ],
+      "deprecatedAlias": true,
+      "elements": 2,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/ForgotPasswordPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/ModerationPage.jsx",
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "CircleCheckBig",
+      "file": "circle-check-big.svg",
+      "usedAs": [
+        "CheckCircle"
+      ],
+      "aliases": [
+        "CheckCircle",
+        "CheckCircleIcon",
+        "CircleCheckBig",
+        "CircleCheckBigIcon",
+        "LucideCheckCircle",
+        "LucideCircleCheckBig"
+      ],
+      "deprecatedAlias": true,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "components/hazards/HazardDetailsPanel.jsx"
+      ]
+    },
+    {
+      "canonical": "CircleDot",
+      "file": "circle-dot.svg",
+      "usedAs": [
+        "CircleDot"
+      ],
+      "aliases": [
+        "CircleDot",
+        "CircleDotIcon",
+        "LucideCircleDot"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "circle"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx"
+      ]
+    },
+    {
+      "canonical": "CircleHelp",
+      "file": "circle-help.svg",
+      "usedAs": [
+        "HelpCircle"
+      ],
+      "aliases": [
+        "CircleHelp",
+        "CircleHelpIcon",
+        "HelpCircle",
+        "HelpCircleIcon",
+        "LucideCircleHelp",
+        "LucideHelpCircle"
+      ],
+      "deprecatedAlias": true,
+      "elements": 3,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "pages/CustomerDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "CirclePlus",
+      "file": "circle-plus.svg",
+      "usedAs": [
+        "PlusCircle"
+      ],
+      "aliases": [
+        "CirclePlus",
+        "CirclePlusIcon",
+        "LucideCirclePlus",
+        "LucidePlusCircle",
+        "PlusCircle",
+        "PlusCircleIcon"
+      ],
+      "deprecatedAlias": true,
+      "elements": 3,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx",
+        "components/layout/MobileBottomNavigation.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/MyReportsPage.jsx",
+        "pages/ReportHazardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "CircleX",
+      "file": "circle-x.svg",
+      "usedAs": [
+        "XCircle"
+      ],
+      "aliases": [
+        "CircleX",
+        "CircleXIcon",
+        "LucideCircleX",
+        "LucideXCircle",
+        "XCircle",
+        "XCircleIcon"
+      ],
+      "deprecatedAlias": true,
+      "elements": 3,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Clock",
+      "file": "clock.svg",
+      "usedAs": [
+        "Clock"
+      ],
+      "aliases": [
+        "Clock",
+        "ClockIcon",
+        "LucideClock"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "circle",
+        "polyline"
+      ],
+      "usedIn": [
+        "components/hazards/FreshnessBadge.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/ForgotPasswordPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/ModerationPage.jsx",
+        "pages/MyReportsPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Compass",
+      "file": "compass.svg",
+      "usedAs": [
+        "Compass"
+      ],
+      "aliases": [
+        "Compass",
+        "CompassIcon",
+        "LucideCompass"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Cone",
+      "file": "cone.svg",
+      "usedAs": [
+        "Cone"
+      ],
+      "aliases": [
+        "Cone",
+        "ConeIcon",
+        "LucideCone"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "ellipse"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Download",
+      "file": "download.svg",
+      "usedAs": [
+        "Download"
+      ],
+      "aliases": [
+        "Download",
+        "DownloadIcon",
+        "LucideDownload"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path",
+        "polyline",
+        "line"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Droplets",
+      "file": "droplets.svg",
+      "usedAs": [
+        "Droplets"
+      ],
+      "aliases": [
+        "Droplets",
+        "DropletsIcon",
+        "LucideDroplets"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "components/hazards/CategoryBadge.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ExternalLink",
+      "file": "external-link.svg",
+      "usedAs": [
+        "ExternalLink"
+      ],
+      "aliases": [
+        "ExternalLink",
+        "ExternalLinkIcon",
+        "LucideExternalLink"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/ModerationPage.jsx",
+        "pages/MyReportsPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Eye",
+      "file": "eye.svg",
+      "usedAs": [
+        "Eye"
+      ],
+      "aliases": [
+        "Eye",
+        "EyeIcon",
+        "LucideEye"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/LoginPage.jsx",
+        "pages/ModerationPage.jsx",
+        "pages/RegisterPage.jsx",
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "EyeOff",
+      "file": "eye-off.svg",
+      "usedAs": [
+        "EyeOff"
+      ],
+      "aliases": [
+        "EyeOff",
+        "EyeOffIcon",
+        "LucideEyeOff"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/LoginPage.jsx",
+        "pages/RegisterPage.jsx",
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "FileCode",
+      "file": "file-code.svg",
+      "usedAs": [
+        "FileCode"
+      ],
+      "aliases": [
+        "FileCode",
+        "FileCodeIcon",
+        "LucideFileCode"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx"
+      ]
+    },
+    {
+      "canonical": "FileText",
+      "file": "file-text.svg",
+      "usedAs": [
+        "FileText"
+      ],
+      "aliases": [
+        "FileText",
+        "FileTextIcon",
+        "LucideFileText"
+      ],
+      "deprecatedAlias": false,
+      "elements": 5,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Filter",
+      "file": "filter.svg",
+      "usedAs": [
+        "Filter"
+      ],
+      "aliases": [
+        "Filter",
+        "FilterIcon",
+        "LucideFilter"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "polygon"
+      ],
+      "usedIn": [
+        "components/hazards/HazardFilters.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Flag",
+      "file": "flag.svg",
+      "usedAs": [
+        "Flag"
+      ],
+      "aliases": [
+        "Flag",
+        "FlagIcon",
+        "LucideFlag"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "line"
+      ],
+      "usedIn": [
+        "components/hazards/HazardDetailsPanel.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Flame",
+      "file": "flame.svg",
+      "usedAs": [
+        "Flame"
+      ],
+      "aliases": [
+        "Flame",
+        "FlameIcon",
+        "LucideFlame"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "FolderKanban",
+      "file": "folder-kanban.svg",
+      "usedAs": [
+        "FolderKanban"
+      ],
+      "aliases": [
+        "FolderKanban",
+        "FolderKanbanIcon",
+        "LucideFolderKanban"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx",
+        "pages/MyReportsPage.jsx"
+      ]
+    },
+    {
+      "canonical": "HeartHandshake",
+      "file": "heart-handshake.svg",
+      "usedAs": [
+        "HeartHandshake"
+      ],
+      "aliases": [
+        "HeartHandshake",
+        "HeartHandshakeIcon",
+        "LucideHeartHandshake"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "History",
+      "file": "history.svg",
+      "usedAs": [
+        "History"
+      ],
+      "aliases": [
+        "History",
+        "HistoryIcon",
+        "LucideHistory"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Info",
+      "file": "info.svg",
+      "usedAs": [
+        "Info"
+      ],
+      "aliases": [
+        "Info",
+        "InfoIcon",
+        "LucideInfo"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/feedback/DemoDataBanner.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "KeyRound",
+      "file": "key-round.svg",
+      "usedAs": [
+        "KeyRound"
+      ],
+      "aliases": [
+        "KeyRound",
+        "KeyRoundIcon",
+        "LucideKeyRound"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Layers",
+      "file": "layers.svg",
+      "usedAs": [
+        "Layers"
+      ],
+      "aliases": [
+        "Layers",
+        "Layers3",
+        "Layers3Icon",
+        "LayersIcon",
+        "LucideLayers",
+        "LucideLayers3"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/hazards/HazardFilters.jsx",
+        "components/map/HazardMap.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "LayoutDashboard",
+      "file": "layout-dashboard.svg",
+      "usedAs": [
+        "LayoutDashboard"
+      ],
+      "aliases": [
+        "LayoutDashboard",
+        "LayoutDashboardIcon",
+        "LucideLayoutDashboard"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "rect"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx"
+      ]
+    },
+    {
+      "canonical": "List",
+      "file": "list.svg",
+      "usedAs": [
+        "List"
+      ],
+      "aliases": [
+        "List",
+        "ListIcon",
+        "LucideList"
+      ],
+      "deprecatedAlias": false,
+      "elements": 6,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/MobileBottomNavigation.jsx"
+      ]
+    },
+    {
+      "canonical": "LoaderCircle",
+      "file": "loader-circle.svg",
+      "usedAs": [
+        "Loader2"
+      ],
+      "aliases": [
+        "Loader2",
+        "Loader2Icon",
+        "LoaderCircle",
+        "LoaderCircleIcon",
+        "LucideLoader2",
+        "LucideLoaderCircle"
+      ],
+      "deprecatedAlias": true,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "pages/ForgotPasswordPage.jsx",
+        "pages/LoginPage.jsx",
+        "pages/ModerationPage.jsx",
+        "pages/RegisterPage.jsx",
+        "pages/ResetPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "LogIn",
+      "file": "log-in.svg",
+      "usedAs": [
+        "LogIn"
+      ],
+      "aliases": [
+        "LogIn",
+        "LogInIcon",
+        "LucideLogIn"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path",
+        "polyline",
+        "line"
+      ],
+      "usedIn": [
+        "pages/LoginPage.jsx",
+        "pages/ReportHazardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "LogOut",
+      "file": "log-out.svg",
+      "usedAs": [
+        "LogOut"
+      ],
+      "aliases": [
+        "LogOut",
+        "LogOutIcon",
+        "LucideLogOut"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path",
+        "polyline",
+        "line"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx"
+      ]
+    },
+    {
+      "canonical": "Mail",
+      "file": "mail.svg",
+      "usedAs": [
+        "Mail"
+      ],
+      "aliases": [
+        "LucideMail",
+        "Mail",
+        "MailIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "rect",
+        "path"
+      ],
+      "usedIn": [
+        "pages/ForgotPasswordPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Map",
+      "file": "map.svg",
+      "usedAs": [
+        "Map"
+      ],
+      "aliases": [
+        "LucideMap",
+        "Map",
+        "MapIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/MobileBottomNavigation.jsx"
+      ]
+    },
+    {
+      "canonical": "MapPin",
+      "file": "map-pin.svg",
+      "usedAs": [
+        "MapPin"
+      ],
+      "aliases": [
+        "LucideMapPin",
+        "MapPin",
+        "MapPinIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "components/hazards/HazardDetailsPanel.jsx",
+        "components/layout/AppHeader.jsx",
+        "components/map/LocationPickerMap.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/MyReportsPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Menu",
+      "file": "menu.svg",
+      "usedAs": [
+        "Menu"
+      ],
+      "aliases": [
+        "LucideMenu",
+        "Menu",
+        "MenuIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "line"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx"
+      ]
+    },
+    {
+      "canonical": "Moon",
+      "file": "moon.svg",
+      "usedAs": [
+        "Moon"
+      ],
+      "aliases": [
+        "LucideMoon",
+        "Moon",
+        "MoonIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx"
+      ]
+    },
+    {
+      "canonical": "Navigation",
+      "file": "navigation.svg",
+      "usedAs": [
+        "Navigation"
+      ],
+      "aliases": [
+        "LucideNavigation",
+        "Navigation",
+        "NavigationIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "polygon"
+      ],
+      "usedIn": [
+        "components/map/LocationPickerMap.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "PenLine",
+      "file": "pen-line.svg",
+      "usedAs": [
+        "Edit3"
+      ],
+      "aliases": [
+        "Edit3",
+        "Edit3Icon",
+        "LucideEdit3",
+        "LucidePenLine",
+        "PenLine",
+        "PenLineIcon"
+      ],
+      "deprecatedAlias": true,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "PhoneCall",
+      "file": "phone-call.svg",
+      "usedAs": [
+        "PhoneCall"
+      ],
+      "aliases": [
+        "LucidePhoneCall",
+        "PhoneCall",
+        "PhoneCallIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Radio",
+      "file": "radio.svg",
+      "usedAs": [
+        "Radio"
+      ],
+      "aliases": [
+        "LucideRadio",
+        "Radio",
+        "RadioIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 5,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "RefreshCw",
+      "file": "refresh-cw.svg",
+      "usedAs": [
+        "RefreshCw"
+      ],
+      "aliases": [
+        "LucideRefreshCw",
+        "RefreshCw",
+        "RefreshCwIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/feedback/ErrorState.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Save",
+      "file": "save.svg",
+      "usedAs": [
+        "Save"
+      ],
+      "aliases": [
+        "LucideSave",
+        "Save",
+        "SaveIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Search",
+      "file": "search.svg",
+      "usedAs": [
+        "Search"
+      ],
+      "aliases": [
+        "LucideSearch",
+        "Search",
+        "SearchIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Settings",
+      "file": "settings.svg",
+      "usedAs": [
+        "Settings"
+      ],
+      "aliases": [
+        "LucideSettings",
+        "Settings",
+        "SettingsIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Shield",
+      "file": "shield.svg",
+      "usedAs": [
+        "Shield"
+      ],
+      "aliases": [
+        "LucideShield",
+        "Shield",
+        "ShieldIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/ModerationPage.jsx",
+        "pages/ReportHazardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ShieldAlert",
+      "file": "shield-alert.svg",
+      "usedAs": [
+        "ShieldAlert"
+      ],
+      "aliases": [
+        "LucideShieldAlert",
+        "ShieldAlert",
+        "ShieldAlertIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/hazards/CategoryBadge.jsx",
+        "components/layout/AppHeader.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "ShieldCheck",
+      "file": "shield-check.svg",
+      "usedAs": [
+        "ShieldCheck"
+      ],
+      "aliases": [
+        "LucideShieldCheck",
+        "ShieldCheck",
+        "ShieldCheckIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "SlidersVertical",
+      "file": "sliders-vertical.svg",
+      "usedAs": [
+        "Sliders"
+      ],
+      "aliases": [
+        "LucideSliders",
+        "LucideSlidersVertical",
+        "Sliders",
+        "SlidersIcon",
+        "SlidersVertical",
+        "SlidersVerticalIcon"
+      ],
+      "deprecatedAlias": true,
+      "elements": 9,
+      "tags": [
+        "line"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Smartphone",
+      "file": "smartphone.svg",
+      "usedAs": [
+        "Smartphone"
+      ],
+      "aliases": [
+        "LucideSmartphone",
+        "Smartphone",
+        "SmartphoneIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "rect",
+        "path"
+      ],
+      "usedIn": [
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Sparkles",
+      "file": "sparkles.svg",
+      "usedAs": [
+        "Sparkles"
+      ],
+      "aliases": [
+        "LucideSparkles",
+        "LucideStars",
+        "Sparkles",
+        "SparklesIcon",
+        "Stars",
+        "StarsIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 5,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Sun",
+      "file": "sun.svg",
+      "usedAs": [
+        "Sun"
+      ],
+      "aliases": [
+        "LucideSun",
+        "Sun",
+        "SunIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 9,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/layout/AppHeader.jsx"
+      ]
+    },
+    {
+      "canonical": "ThumbsUp",
+      "file": "thumbs-up.svg",
+      "usedAs": [
+        "ThumbsUp"
+      ],
+      "aliases": [
+        "LucideThumbsUp",
+        "ThumbsUp",
+        "ThumbsUpIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/hazards/HazardCard.jsx",
+        "components/hazards/HazardDetailsPanel.jsx",
+        "pages/LandingPage.jsx",
+        "pages/MyReportsPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Trash2",
+      "file": "trash-2.svg",
+      "usedAs": [
+        "Trash2"
+      ],
+      "aliases": [
+        "LucideTrash2",
+        "Trash2",
+        "Trash2Icon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 5,
+      "tags": [
+        "path",
+        "line"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "TreePine",
+      "file": "tree-pine.svg",
+      "usedAs": [
+        "TreePine"
+      ],
+      "aliases": [
+        "LucideTreePine",
+        "TreePine",
+        "TreePineIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Trees",
+      "file": "trees.svg",
+      "usedAs": [
+        "Trees"
+      ],
+      "aliases": [
+        "LucideTrees",
+        "Trees",
+        "TreesIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/hazards/CategoryBadge.jsx"
+      ]
+    },
+    {
+      "canonical": "TrendingUp",
+      "file": "trending-up.svg",
+      "usedAs": [
+        "TrendingUp"
+      ],
+      "aliases": [
+        "LucideTrendingUp",
+        "TrendingUp",
+        "TrendingUpIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "polyline"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "TriangleAlert",
+      "file": "triangle-alert.svg",
+      "usedAs": [
+        "AlertTriangle"
+      ],
+      "aliases": [
+        "AlertTriangle",
+        "AlertTriangleIcon",
+        "LucideAlertTriangle",
+        "LucideTriangleAlert",
+        "TriangleAlert",
+        "TriangleAlertIcon"
+      ],
+      "deprecatedAlias": true,
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/feedback/ErrorState.jsx",
+        "components/forms/ReportHazardForm.jsx",
+        "components/hazards/HazardDetailsPanel.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/CustomerDashboardPage.jsx",
+        "pages/LandingPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    },
+    {
+      "canonical": "User",
+      "file": "user.svg",
+      "usedAs": [
+        "User"
+      ],
+      "aliases": [
+        "LucideUser",
+        "User",
+        "UserIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/CustomerDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "UserCheck",
+      "file": "user-check.svg",
+      "usedAs": [
+        "UserCheck"
+      ],
+      "aliases": [
+        "LucideUserCheck",
+        "UserCheck",
+        "UserCheckIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 3,
+      "tags": [
+        "path",
+        "circle",
+        "polyline"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "UserPlus",
+      "file": "user-plus.svg",
+      "usedAs": [
+        "UserPlus"
+      ],
+      "aliases": [
+        "LucideUserPlus",
+        "UserPlus",
+        "UserPlusIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path",
+        "circle",
+        "line"
+      ],
+      "usedIn": [
+        "pages/RegisterPage.jsx"
+      ]
+    },
+    {
+      "canonical": "Users",
+      "file": "users.svg",
+      "usedAs": [
+        "Users"
+      ],
+      "aliases": [
+        "LucideUsers",
+        "Users",
+        "UsersIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx",
+        "pages/LandingPage.jsx"
+      ]
+    },
+    {
+      "canonical": "UserX",
+      "file": "user-x.svg",
+      "usedAs": [
+        "UserX"
+      ],
+      "aliases": [
+        "LucideUserX",
+        "UserX",
+        "UserXIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 4,
+      "tags": [
+        "path",
+        "circle",
+        "line"
+      ],
+      "usedIn": [
+        "pages/AdminDashboardPage.jsx"
+      ]
+    },
+    {
+      "canonical": "X",
+      "file": "x.svg",
+      "usedAs": [
+        "X"
+      ],
+      "aliases": [
+        "LucideX",
+        "X",
+        "XIcon"
+      ],
+      "deprecatedAlias": false,
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/forms/ReportHazardForm.jsx",
+        "components/hazards/HazardDetailsPanel.jsx",
+        "components/layout/AppHeader.jsx",
+        "pages/AdminDashboardPage.jsx",
+        "pages/ModerationPage.jsx"
+      ]
+    }
+  ]
+}

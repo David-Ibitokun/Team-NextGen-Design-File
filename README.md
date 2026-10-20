@@ -28,7 +28,7 @@ It is intentionally **separate from the application code repository** so that:
 | Folder | Purpose |
 |---|---|
 | [`01-design-system/`](01-design-system/) | Design tokens: colour, typography, spacing, elevation, motion |
-| [`02-brand/`](02-brand/) | Brand identity: logo, logo usage rules, colour palette reference |
+| [`02-brand/`](02-brand/) | Brand identity: logo, logo usage rules, colour palette reference, and the complete 71-icon Lucide SVG set |
 | [`03-components/`](03-components/) | Per-component specifications and usage guidance |
 | [`04-screen-specs/`](04-screen-specs/) | Screen-by-screen layout specifications |
 | [`05-user-flows/`](05-user-flows/) | End-to-end user journeys and information architecture |
@@ -36,11 +36,13 @@ It is intentionally **separate from the application code repository** so that:
 | [`07-responsive/`](07-responsive/) | Breakpoints and responsive layout rules |
 | [`08-accessibility/`](08-accessibility/) | Accessibility requirements and compliance notes |
 | [`09-pwa/`](09-pwa/) | Progressive Web App manifest and offline strategy |
-| [`10-backend-placeholder/`](10-backend-placeholder/) | Reserved for backend/API design documentation |
+| [`10-backend-placeholder/`](10-backend-placeholder/) | Backend & API design — architecture, data model, all 28 endpoints, permissions, status lifecycle, moderation, error handling, media pipeline, email templates |
 
 ---
 
 ## Technology context
+
+### Frontend
 
 The design system is implemented with the following stack, which constrains what is
 achievable and should be considered when extending the system.
@@ -55,6 +57,19 @@ achievable and should be considered when extending the system.
 | Routing | React Router | 6.28 (data router / `createBrowserRouter`) |
 | HTTP client | Axios | 1.7 |
 | PWA | Native service worker (no framework) | — |
+
+### Backend
+
+| Concern | Choice | Version |
+|---|---|---|
+| Framework | Django | 5.1 |
+| REST layer | Django REST Framework | 3.15 |
+| API documentation | drf-spectacular (OpenAPI 3.0) | 0.28 |
+| Authentication | Django session cookies + CSRF | — |
+| Database | SQLite (dev) · PostgreSQL (prod) | — |
+| Image processing | Pillow | 10.4+ |
+| CORS | django-cors-headers | 4.4+ |
+| Language | Python | 3.13+ |
 
 **Theme mode is implemented** via a `.dark` class variant on `<html>`, with user
 preference persisted to `localStorage` under the key `routex-theme`.
@@ -98,5 +113,8 @@ preference persisted to `localStorage` under the key `routex-theme`.
 
 ## Status
 
-Frontend design is documented. Backend/API design documentation is pending and reserved
-in `10-backend-placeholder/`.
+Frontend design and backend API design are both fully documented, derived from the
+implemented source in the application repository.
+
+Backend tests (`apps/*/tests.py`, 28 passing) were not provided and are therefore not
+documented. High-fidelity Figma source files and exported screenshots remain outstanding.
