@@ -37,6 +37,7 @@ It is intentionally **separate from the application code repository** so that:
 | [`08-accessibility/`](08-accessibility/) | Accessibility requirements and compliance notes |
 | [`09-pwa/`](09-pwa/) | Progressive Web App manifest and offline strategy |
 | [`10-backend-placeholder/`](10-backend-placeholder/) | Backend & API design — architecture, data model, all 28 endpoints, permissions, status lifecycle, moderation, error handling, media pipeline, email templates |
+| [`12-mobile/`](12-mobile/) | Native mobile app — design tokens, 10 screen specs, component reference, `app.json` and permissions, navigation security, 34 icons, app assets |
 
 ---
 
@@ -71,8 +72,25 @@ achievable and should be considered when extending the system.
 | CORS | django-cors-headers | 4.4+ |
 | Language | Python | 3.13+ |
 
+### Mobile
+
+| Concern | Choice | Version |
+|---|---|---|
+| Framework | Expo | ~57.0.30 |
+| Runtime | React Native | 0.86.3 |
+| UI runtime | React | 19.2.3 |
+| Language | TypeScript | ~6.0.3 |
+| Icons | lucide-react-native | ^1.59.0 |
+| Vector rendering | react-native-svg | ^15.16.0 |
+| WebView | react-native-webview | ^14.0.1 |
+| Media capture | expo-image-picker | ~57.0.20 |
+| Safe areas | react-native-safe-area-context | ^5.10.1 |
+| Orientation | Portrait | — |
+| Bundle ID | `org.routex.app` | — |
+
 **Theme mode is implemented** via a `.dark` class variant on `<html>`, with user
-preference persisted to `localStorage` under the key `routex-theme`.
+preference persisted to `localStorage` under the key `routex-theme`. The mobile app uses
+a TypeScript theme object with a light / dark / system setting.
 
 ---
 

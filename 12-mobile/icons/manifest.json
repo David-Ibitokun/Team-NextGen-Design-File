@@ -1,0 +1,511 @@
+{
+  "package": "lucide-react-native@^1.59.0",
+  "geometrySource": "lucide-react@0.469.0 (identical upstream Lucide geometry)",
+  "uniqueIcons": 34,
+  "importNamesUsed": 34,
+  "icons": [
+    {
+      "canonical": "Camera",
+      "file": "camera.svg",
+      "usedAs": [
+        "Camera"
+      ],
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "ChevronRight",
+      "file": "chevron-right.svg",
+      "usedAs": [
+        "ChevronRight"
+      ],
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "CircleAlert",
+      "file": "circle-alert.svg",
+      "usedAs": [
+        "AlertCircle"
+      ],
+      "elements": 3,
+      "tags": [
+        "circle",
+        "line"
+      ],
+      "usedIn": [
+        "components/NativeMapScreen.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "CircleCheck",
+      "file": "circle-check.svg",
+      "usedAs": [
+        "CheckCircle2"
+      ],
+      "elements": 2,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "CircleDot",
+      "file": "circle-dot.svg",
+      "usedAs": [
+        "CircleDot"
+      ],
+      "elements": 2,
+      "tags": [
+        "circle"
+      ],
+      "usedIn": [
+        "components/HazardCardNative.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "CircleHelp",
+      "file": "circle-help.svg",
+      "usedAs": [
+        "HelpCircle"
+      ],
+      "elements": 3,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/HazardCardNative.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "CirclePlus",
+      "file": "circle-plus.svg",
+      "usedAs": [
+        "PlusCircle"
+      ],
+      "elements": 3,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Clock",
+      "file": "clock.svg",
+      "usedAs": [
+        "Clock"
+      ],
+      "elements": 2,
+      "tags": [
+        "circle",
+        "polyline"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx",
+        "components/HazardCardNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Droplets",
+      "file": "droplets.svg",
+      "usedAs": [
+        "Droplets"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/HazardCardNative.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "ExternalLink",
+      "file": "external-link.svg",
+      "usedAs": [
+        "ExternalLink"
+      ],
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "HeartHandshake",
+      "file": "heart-handshake.svg",
+      "usedAs": [
+        "HeartHandshake"
+      ],
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Image",
+      "file": "image.svg",
+      "usedAs": [
+        "ImageIcon"
+      ],
+      "elements": 3,
+      "tags": [
+        "rect",
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Layers",
+      "file": "layers.svg",
+      "usedAs": [
+        "Layers"
+      ],
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "LayoutDashboard",
+      "file": "layout-dashboard.svg",
+      "usedAs": [
+        "LayoutDashboard"
+      ],
+      "elements": 4,
+      "tags": [
+        "rect"
+      ],
+      "usedIn": [
+        "components/AppHeaderNative.tsx"
+      ]
+    },
+    {
+      "canonical": "List",
+      "file": "list.svg",
+      "usedAs": [
+        "List"
+      ],
+      "elements": 6,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/MobileBottomNavNative.tsx",
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "Locate",
+      "file": "locate.svg",
+      "usedAs": [
+        "Locate"
+      ],
+      "elements": 5,
+      "tags": [
+        "line",
+        "circle"
+      ],
+      "usedIn": [
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "Map",
+      "file": "map.svg",
+      "usedAs": [
+        "Map"
+      ],
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/MobileBottomNavNative.tsx"
+      ]
+    },
+    {
+      "canonical": "MapPin",
+      "file": "map-pin.svg",
+      "usedAs": [
+        "MapPin"
+      ],
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx",
+        "components/HazardCardNative.tsx",
+        "components/NativeMapScreen.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Minus",
+      "file": "minus.svg",
+      "usedAs": [
+        "Minus"
+      ],
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "Moon",
+      "file": "moon.svg",
+      "usedAs": [
+        "Moon"
+      ],
+      "elements": 1,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/AppHeaderNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Navigation",
+      "file": "navigation.svg",
+      "usedAs": [
+        "Navigation"
+      ],
+      "elements": 1,
+      "tags": [
+        "polygon"
+      ],
+      "usedIn": [
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Plus",
+      "file": "plus.svg",
+      "usedAs": [
+        "Plus"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/MobileBottomNavNative.tsx",
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "RefreshCw",
+      "file": "refresh-cw.svg",
+      "usedAs": [
+        "RefreshCw"
+      ],
+      "elements": 4,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/NativeMapScreen.tsx"
+      ]
+    },
+    {
+      "canonical": "RotateCw",
+      "file": "rotate-cw.svg",
+      "usedAs": [
+        "RotateCw"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/AppHeaderNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Settings",
+      "file": "settings.svg",
+      "usedAs": [
+        "Settings"
+      ],
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "ShieldCheck",
+      "file": "shield-check.svg",
+      "usedAs": [
+        "ShieldCheck"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "SlidersVertical",
+      "file": "sliders-vertical.svg",
+      "usedAs": [
+        "Sliders"
+      ],
+      "elements": 9,
+      "tags": [
+        "line"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Sparkles",
+      "file": "sparkles.svg",
+      "usedAs": [
+        "Sparkles"
+      ],
+      "elements": 5,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "Sun",
+      "file": "sun.svg",
+      "usedAs": [
+        "Sun"
+      ],
+      "elements": 9,
+      "tags": [
+        "circle",
+        "path"
+      ],
+      "usedIn": [
+        "components/AppHeaderNative.tsx"
+      ]
+    },
+    {
+      "canonical": "ThumbsUp",
+      "file": "thumbs-up.svg",
+      "usedAs": [
+        "ThumbsUp"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/HazardCardNative.tsx"
+      ]
+    },
+    {
+      "canonical": "TreePine",
+      "file": "tree-pine.svg",
+      "usedAs": [
+        "TreePine"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/HazardCardNative.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "TriangleAlert",
+      "file": "triangle-alert.svg",
+      "usedAs": [
+        "AlertTriangle"
+      ],
+      "elements": 3,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx",
+        "components/HazardCardNative.tsx",
+        "components/ReportModalNative.tsx"
+      ]
+    },
+    {
+      "canonical": "User",
+      "file": "user.svg",
+      "usedAs": [
+        "User"
+      ],
+      "elements": 2,
+      "tags": [
+        "path",
+        "circle"
+      ],
+      "usedIn": [
+        "components/DashboardScreenNative.tsx"
+      ]
+    },
+    {
+      "canonical": "X",
+      "file": "x.svg",
+      "usedAs": [
+        "X"
+      ],
+      "elements": 2,
+      "tags": [
+        "path"
+      ],
+      "usedIn": [
+        "components/ReportModalNative.tsx"
+      ]
+    }
+  ]
+}

@@ -27,6 +27,8 @@ decisions **without reading application source code**.
 | Follow a user journey | [`05-user-flows/README.md`](05-user-flows/README.md) |
 | Review accessibility | [`08-accessibility/README.md`](08-accessibility/README.md) |
 | Review the PWA strategy | [`09-pwa/README.md`](09-pwa/README.md) |
+| Review the mobile app | [`12-mobile/README.md`](12-mobile/README.md) |
+| Browse the mobile icons | [`12-mobile/icons/index.html`](12-mobile/icons/index.html) — visual gallery |
 | See the brand assets | [`02-brand/README.md`](02-brand/README.md) |
 | Browse the icon set | [`02-brand/icons/index.html`](02-brand/icons/index.html) — visual gallery |
 
@@ -120,7 +122,45 @@ routex-design/
     ├── error-handling.md            Response formats, validation messages, silent failures
     ├── media-and-uploads.md         Photo validation, WebP pipeline, storage layout
     └── email-templates.md           Password reset email design & branding
+│
+└── 12-mobile/                      Native mobile app (Expo / React Native)
+    ├── README.md                    Architecture, two generations, principles
+    ├── 01-design-system/
+    │   ├── colour.md                25 semantic roles per theme, category + status colours
+    │   └── typography-and-spacing.md Type scale, elevation, motion, touch targets
+    ├── 02-screens/
+    │   ├── README.md                Screen inventory, app shell, tab model
+    │   ├── app-header.md            Brand lockup, dashboard, theme toggle, refresh
+    │   ├── hazard-list.md           Filters, hazard card, skeleton, empty state
+    │   ├── native-map.md            Leaflet-in-WebView, markers, controls, Cards fallback
+    │   ├── report-modal.md          Categories, preset corridors, photo, submit
+    │   ├── dashboard.md             Profile card, role tabs, metric tiles
+    │   └── system-screens.md        Loading, error, configuration missing
+    ├── 03-components/
+    │   └── README.md                14 components, patterns, conventions
+    ├── 04-native-platform/
+    │   ├── README.md                app.json, permissions, dependencies, env config
+    │   └── navigation-security.md   URL policy, WebView hardening, 10 tests
+    ├── icons/                       34 Lucide SVGs + gallery + sprite + manifest
+    └── assets/                      6 app icon / splash PNGs + brand review
 ```
+
+---
+
+## Three platforms, one product
+
+| | Web | Mobile | Backend |
+|---|---|---|---|
+| **Stack** | React 18 · Vite 6 · Tailwind 4 | Expo 57 · React Native 0.86 · TypeScript 6 | Django 5.1 · DRF 3.15 |
+| **Doc** | [`01–07`](04-screen-specs/README.md) | [`12-mobile`](12-mobile/README.md) | [`10-backend-placeholder`](10-backend-placeholder/README.md) |
+| **Icons** | 71 Lucide | 34 Lucide | — |
+| **Theme** | CSS variables + `.dark` class | TypeScript theme objects | — |
+| **Auth** | Session + CSRF | Session (in WebView) | Session + CSRF, 4 tiers |
+
+**29 of the 34 mobile icons are shared with the web**, with identical geometry — the same
+Lucide artwork under two packages. The shared accent colour (`#087F8C`), the shared
+hazard category colours, and the shared 5-status model make the two frontends read as one
+product rather than two.
 
 ---
 

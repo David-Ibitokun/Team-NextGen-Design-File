@@ -132,3 +132,20 @@ Tracked in the documents where they occur.
 | `HazardFlag` rows are never exposed to moderators | Moderators see `flags_count` but not who or why | [`10-backend-placeholder/moderation-model.md`](10-backend-placeholder/moderation-model.md) |
 | Settings audit records keys, not values | Before/after comparison is unrecoverable | [`10-backend-placeholder/moderation-model.md`](10-backend-placeholder/moderation-model.md) |
 | `image/heic` accepted client-side, unsupported server-side | iPhone users may be offered a failing format | [`10-backend-placeholder/media-and-uploads.md`](10-backend-placeholder/media-and-uploads.md) |
+
+### Mobile
+
+| Issue | Impact | Location |
+|---|---|---|
+| **App icons are the default Expo template artwork** | The home screen and store listing show a blue "A", not RouteX | [`12-mobile/assets/README.md`](12-mobile/assets/README.md) |
+| Moderator and Admin dashboard tabs are visible to everyone | Implies privileged access that does not exist | [`12-mobile/02-screens/dashboard.md`](12-mobile/02-screens/dashboard.md) |
+| "My Reports" shows every hazard, not the user's | The tab label does not match the content | [`12-mobile/02-screens/dashboard.md`](12-mobile/02-screens/dashboard.md) |
+| User identity is hardcoded | Every user sees "Citizen Contributor" | [`12-mobile/02-screens/dashboard.md`](12-mobile/02-screens/dashboard.md) |
+| Confirm action does not call the API | The count increments locally only | [`12-mobile/02-screens/hazard-list.md`](12-mobile/02-screens/hazard-list.md) |
+| Theme choice is not persisted | Resets to the system scheme on every launch | [`12-mobile/01-design-system/colour.md`](12-mobile/01-design-system/colour.md) |
+| `userInterfaceStyle: "light"` | iOS chrome does not follow the app's dark mode | [`12-mobile/04-native-platform/README.md`](12-mobile/04-native-platform/README.md) |
+| `expo-image-picker` permissions not declared | iOS/Android capture may fail | [`12-mobile/04-native-platform/README.md`](12-mobile/04-native-platform/README.md) |
+| Policy tests re-implement the logic | The suite can pass while the shipped code breaks | [`12-mobile/04-native-platform/navigation-security.md`](12-mobile/04-native-platform/navigation-security.md) |
+| `README.md` / `AGENTS.md` describe the legacy WebView architecture | Docs contradict the code | [`12-mobile/README.md`](12-mobile/README.md) |
+| `RouteXHeader` and `RouteXWebView` are unreferenced | Dead code that still ships | [`12-mobile/03-components/README.md`](12-mobile/03-components/README.md) |
+| Category badge fills differ between web and mobile | The same category looks different per platform | [`12-mobile/01-design-system/colour.md`](12-mobile/01-design-system/colour.md) |
